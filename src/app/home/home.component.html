@@ -15,10 +15,10 @@
                     <option value="+">+</option>
                     <option value="-">-</option>
                 </select>
-                <input id="txtAmount" name="addAmt" type="text" placeholder="" [(ngModel)]="addAmt" style="width: 82%;">
+                <input id="txtAmount" name="addAmt" type="text" placeholder="Enter amount" [(ngModel)]="addAmt" style="width: 82%;">
             </div>
             <div class="row submit">
-                <input type="submit" value="Save" style="width: 120px;">
+                <input type="submit" value="Save" (click)="addItem()">
             </div>
         </form>
     </div>
@@ -27,7 +27,7 @@
             <tr *ngFor="let ct of cryptos">
                 <td>{{ ct.name }}</td>
                 <td style="text-align: right">{{ ct.price | number: '1.2-2' }}</td>
-                <td style="text-align: right">{{ ct.amount | number: '1.0-' + ct.digits }}</td>
+                <td style="text-align: right" [@rowUpdated]="ct.animate">{{ ct.amount | number: '1.0-' + ct.digits }}</td>
                 <td style="text-align: right">{{ (ct.price * ct.amount) | number: '1.2-2' }}</td>
             </tr>
             <tr>
