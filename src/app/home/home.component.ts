@@ -11,7 +11,7 @@ import { trigger, state, style, transition, animate, keyframes, query, stagger }
             state('shown', style({ opacity: 1 })),
             transition('hidden <=> shown', animate('2s ease', keyframes([
                 style({ offset: 0 }),
-                style({ opacity: 1, backgroundColor: '#f16', offset: 0.5 }),
+                style({ offset: 0.5, opacity: 1, backgroundColor: '#618685' }),
                 style({ offset: 1 }),
             ]))
         ]
@@ -22,12 +22,12 @@ export class HomeComponent implements OnInit {
     constructor() { }
 
     cryptos = [
-        { code: 'BTC', name: 'Bitcoin (BTC)', price: 16800, amount: .005, digits: 6, animate: 'hidden' },
-        { code: 'ETH', name: 'Ethereum (ETH)', price: 790, amount: .03, digits: 6, animate: 'hidden' },
-        { code: 'LTC', name: 'Litecoin (LTC)', price: 275, amount: 1.02, digits: 6, animate: 'hidden' },
-        { code: 'BCH', name: 'Bitcoin Cash (BCH)', price: 2950, amount: .09, digits: 6, animate: 'hidden' },
-        { code: 'XRP', name: 'Ripple (XRP)', price: .06, amount: 846, digits: 2, animate: 'hidden' },
-        { code: 'USD', name: 'US Dollars (USD)', price: 1, amount: 95.25, digits: 2, animate: 'hidden' }
+        { code: 'BTC', name: 'Bitcoin (BTC)', price: 16725.00, amount: .03524, digits: 5, animate: 'hidden' },
+        { code: 'ETH', name: 'Ethereum (ETH)', price: 784.68, amount: .4281, digits: 5, animate: 'hidden' },
+        { code: 'LTC', name: 'Litecoin (LTC)', price: 290.75, amount: 1.33207, digits: 5, animate: 'hidden' },
+        { code: 'BCH', name: 'Bitcoin Cash (BCH)', price: 3036.09, amount: .0391, digits: 5, animate: 'hidden' },
+        { code: 'XRP', name: 'Ripple (XRP)', price: 1.24, amount: 846.348, digits: 2, animate: 'hidden' },
+        { code: 'USD', name: 'US Dollars (USD)', price: 1, amount: 232.30, digits: 2, animate: 'hidden' }
     ];
     amtTotal: number = 0;
     addSign: string = '+';

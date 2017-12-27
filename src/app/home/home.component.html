@@ -24,20 +24,32 @@
     </div>
     <div class="list">
         <table>
-            <tr *ngFor="let ct of cryptos">
-                <td>{{ ct.name }}</td>
-                <td style="text-align: right">{{ ct.price | number: '1.2-2' }}</td>
-                <td style="text-align: right" [@rowUpdated]="ct.animate">{{ ct.amount | number: '1.0-' + ct.digits }}</td>
-                <td style="text-align: right">{{ (ct.price * ct.amount) | number: '1.2-2' }}</td>
-            </tr>
-            <tr>
-                <td colspan="3" style="text-align: right; font-weight: bold;">
-                    Total:
-                </td>
-                <td style="text-align: right; font-weight: bold;">
-                    {{ amtTotal | number: '1.2-2'}}
-                </td>
-            </tr>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th style="text-align: right">Price</th>
+                    <th style="text-align: right">Amount</th>
+                    <th style="text-align: right">Current</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ct of cryptos">
+                    <td>{{ ct.name }}</td>
+                    <td style="text-align: right">{{ ct.price | number: '1.2-2' }}</td>
+                    <td style="text-align: right" [@rowUpdated]="ct.animate">{{ ct.amount | number: '1.0-' + ct.digits }}</td>
+                    <td style="text-align: right">{{ (ct.price * ct.amount) | number: '1.2-2' }}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" style="text-align: right; font-weight: bold;">
+                        Total:
+                    </td>
+                    <td style="text-align: right; font-weight: bold;">
+                        {{ amtTotal | number: '1.2-2'}}
+                    </td>
+                </tr>
+            </tfoot>
         </table>
     </div>
     <div style="clear: both;"></div>
