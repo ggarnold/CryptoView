@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+    width: 100%;
+    font-family: Roboto,sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #77a8a8;
+    color: white;
+    height: 50px;
+    padding: 0 10px 0 10px;
+}
+header .title {
+    font-size: x-large;
+    float: left;
+    margin-top: 12px;
+}
+header .links {
+    font-size: smaller;
+    float: right;
+    margin-top: 18px;
+}
+header .links a {
+    margin: 0 10px 0 10px;
+}
+
+footer {
+    text-align: center;
+    color: #aaa;
+    font-size: smaller;
+}
+
+.content {
+    margin: 20px 20px 100px 20px;
+}
